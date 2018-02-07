@@ -1,0 +1,7 @@
+ul
+  = image_tag(@book.cover.url)
+  li.h1 = @book.name
+ul
+  h5 autors:
+  -@book.autors.each do |autor|
+    li = autor.name
