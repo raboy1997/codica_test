@@ -1,7 +1,14 @@
-ul
-  = image_tag(@book.cover.url)
-  li.h1 = @book.name
-ul
-  h5 autors:
-  -@book.autors.each do |autor|
-    li = autor.name
+div.books
+  ul
+    = image_tag(@book.cover.url)
+    li
+      strong
+        |Book name: #{@book.name}
+
+    li
+      |description:
+        #{@book.description}
+  ul
+    h5 autors:
+    -@book.autors.each do |autor|
+      li = link_to autor.name, autor_path(id: autor.id)

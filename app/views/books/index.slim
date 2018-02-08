@@ -1,5 +1,7 @@
-ul
-  -@books.each do |book|
-    li = link_to book.name, book_path(id: book.id)
-    br
-    br
+div.show_books
+  ul
+    -@books.each do |book|
+      li = image_tag(book.cover, size: "100x100")
+      br
+      li = link_to book.name, book_path(id: book.id)
+      hr

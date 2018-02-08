@@ -1,3 +1,5 @@
 ul
   -@autors.each do |autor|
+    li = image_tag(autor.photo, size: "100x100")
     li =link_to autor.name, autor_path(id: autor.id)
+    li = autor.years_of_life
