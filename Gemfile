@@ -26,6 +26,8 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'rubocop'
   gem 'selenium-webdriver'
+  gem 'rspec-rails'
+
 end
 
 group :development do

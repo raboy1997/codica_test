@@ -13,69 +13,69 @@
 ActiveRecord::Schema.define(version: 20180208092455) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'active_admin_comments', force: :cascade do |t|
-    t.string 'namespace'
-    t.text 'body'
-    t.string 'resource_type'
-    t.bigint 'resource_id'
-    t.string 'author_type'
-    t.bigint 'author_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['author_type', 'author_id'], name: 'index_active_admin_comments_on_author_type_and_author_id'
-    t.index ['namespace'], name: 'index_active_admin_comments_on_namespace'
-    t.index ['resource_type', 'resource_id'], name: 'index_active_admin_comments_on_resource_type_and_resource_id'
+  create_table "active_admin_comments", force: :cascade do |t|
+    t.string "namespace"
+    t.text "body"
+    t.string "resource_type"
+    t.bigint "resource_id"
+    t.string "author_type"
+    t.bigint "author_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
+    t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
+    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
-  create_table 'autors', force: :cascade do |t|
-    t.string 'name'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.string 'photo'
-    t.string 'years_of_life'
+  create_table "autors", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "photo"
+    t.string "years_of_life"
   end
 
-  create_table 'autors_books', force: :cascade do |t|
-    t.bigint 'autor_id'
-    t.bigint 'book_id'
-    t.index ['autor_id'], name: 'index_autors_books_on_autor_id'
-    t.index ['book_id'], name: 'index_autors_books_on_book_id'
+  create_table "autors_books", force: :cascade do |t|
+    t.bigint "autor_id"
+    t.bigint "book_id"
+    t.index ["autor_id"], name: "index_autors_books_on_autor_id"
+    t.index ["book_id"], name: "index_autors_books_on_book_id"
   end
 
-  create_table 'books', force: :cascade do |t|
-    t.string 'name'
-    t.string 'cover'
-    t.integer 'autor_id'
-    t.integer 'category_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.text 'description'
+  create_table "books", force: :cascade do |t|
+    t.string "name"
+    t.string "cover"
+    t.integer "autor_id"
+    t.integer "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "description"
   end
 
-  create_table 'categories', force: :cascade do |t|
-    t.string 'name'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'email', default: "", null: false
-    t.string 'encrypted_password', default: "", null: false
-    t.string 'reset_password_token'
-    t.datetime 'reset_password_sent_at'
-    t.datetime 'remember_created_at'
-    t.integer 'sign_in_count', default: 0, null: false
-    t.datetime 'current_sign_in_at'
-    t.datetime 'last_sign_in_at'
-    t.inet 'current_sign_in_ip'
-    t.inet 'last_sign_in_ip'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.string 'role'
-    t.index ['email'], name: 'index_users_on_email', unique: true
-    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "role"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end
