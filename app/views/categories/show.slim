@@ -1,3 +1,6 @@
-ul
-  -@category.books.each do |book|
-    li =link_to book.name, book_path(id: book.id)
+.my-flex-container
+  - @category.books.each do |book|
+    .my-flex-block
+      ul
+        li = image_tag(book.cover, size:'100x75')
+        li =link_to book.name, book_path(id: book.id)

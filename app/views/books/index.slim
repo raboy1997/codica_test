@@ -2,5 +2,5 @@
   -@books.each do |book|
     .my-flex-block
       ul
-        li = image_tag(book.cover, size: "100x100")
+        li = image_tag(book.cover, size: "100x75")
         li = link_to book.name, book_path(id: book.id)
