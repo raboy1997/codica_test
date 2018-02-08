@@ -1,5 +1,7 @@
-ul
+.my-flex-container
   -@autors.each do |autor|
-    li = image_tag(autor.photo, size: "100x100")
-    li =link_to autor.name, autor_path(id: autor.id)
-    li = autor.years_of_life
+    .my-flex-block
+      ul
+        li = image_tag(autor.photo, size: "100x75")
+        li =link_to autor.name, autor_path(id: autor.id)
+        li = autor.years_of_life

@@ -78,3 +78,10 @@ a{
 .show_books{
   width: 30%;
 }
+
+.my-flex-container{
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  justify-content: flex-start;
+}
